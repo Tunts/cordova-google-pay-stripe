@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-stripe-google-pay"
+        version="1.0.0">
+
+  <name>StripeGooglePay</name>
+
+  <description>
+    Allow Google pay using Stripe
+  </description>
+
+  <author>Eddy Verbruggen</author>
+
+  <license>MIT</license>
+
+  <keywords>Google, Pay, Stripe</keywords>
+
+  <!--<repo>https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git</repo>-->
+
+  <!--<issue>https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/issues</issue>-->
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <dependency id="es6-promise-plugin" version="^4.1.0" />
+
+  <js-module src="www/StripeGooglePay.js" name="StripeGooglePay">
+    <clobbers target="window.plugins.stripeGooglePay" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="StripeGooglePay">
+        <param name="android-package" value="android.stripe.googlepay.StripeGooglePay" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <meta-data android:name="com.google.android.gms.wallet.api.enabled"
+              android:value="true" />
+    </config-file>
+
+    <source-file src="src/android/stripe/googlepay/StripeGooglePay.java" target-dir="src/stripe/googlepay/plugins"/>
+
+    <framework src="com.stripe:stripe-android:8.0.0" />
+    <framework src="com.google.android.gms:play-services-wallet:11.4.2" />
+    <framework src="com.android.support:support-v4:26.0.1" />
+    <framework src="com.android.support:appcompat-v7:26.0.1" />
+  </platform>
+
+</plugin>

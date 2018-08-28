@@ -1,0 +1,30 @@
+{
+  "cordova": {
+    "id": "cordova-plugin-stripe-google-pay",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "",
+  "devDependencies": {},
+  "directories": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "keywords": [
+    "Stripe",
+    "Google",
+    "Pay",
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android"
+
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-stripe-google-pay",
+  "version": "1.0.0"
+}
