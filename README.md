@@ -1,0 +1,1 @@
+# cordova-google-pay-stripe
